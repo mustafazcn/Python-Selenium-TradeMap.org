@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TradeMapDBModelStoreContainer" CdmEntityContainer="TradeMapDBEntities">
+    <EntitySetMapping Name="Genel_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapDBModel.Genel_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="Genel_Ulke_Raporu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Ithalat_ulkeID" ColumnName="Ithalat_ulkeID" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="Ihracat_ulkeID" ColumnName="Ihracat_ulkeID" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ozel_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapDBModel.Ozel_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="Ozel_Ulke_Raporu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+          <ScalarProperty Name="Hacim" ColumnName="Hacim" />
+          <ScalarProperty Name="Denge" ColumnName="Denge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UlkeListesi">
+      <EntityTypeMapping TypeName="TradeMapDBModel.UlkeListesi">
+        <MappingFragment StoreEntitySet="UlkeListesi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_GenelUlkeRapor">
+      <EntityTypeMapping TypeName="TradeMapDBModel.View_Base_GenelUlkeRapor">
+        <MappingFragment StoreEntitySet="View_Base_GenelUlkeRapor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Ithalat_ulkeID" ColumnName="Ithalat_ulkeID" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="Ihracat_ulkeID" ColumnName="Ihracat_ulkeID" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_OzelUlkeRapor">
+      <EntityTypeMapping TypeName="TradeMapDBModel.View_Base_OzelUlkeRapor">
+        <MappingFragment StoreEntitySet="View_Base_OzelUlkeRapor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+          <ScalarProperty Name="Hacim" ColumnName="Hacim" />
+          <ScalarProperty Name="Denge" ColumnName="Denge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_Ulkeler">
+      <EntityTypeMapping TypeName="TradeMapDBModel.View_Base_Ulkeler">
+        <MappingFragment StoreEntitySet="View_Base_Ulkeler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Presentation_GenelUlke">
+      <EntityTypeMapping TypeName="TradeMapDBModel.View_Presentation_GenelUlke">
+        <MappingFragment StoreEntitySet="View_Presentation_GenelUlke">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GenelUlkeRapor_Islem" FunctionName="TradeMapDBModel.Store.Proc_GenelUlkeRapor_Islem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TradeMapDBModel.Proc_GenelUlkeRapor_Islem_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_OzelUlkeRapor_Islem" FunctionName="TradeMapDBModel.Store.Proc_OzelUlkeRapor_Islem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TradeMapDBModel.Proc_OzelUlkeRapor_Islem_Result">
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Ithalat" ColumnName="Ithalat" />
+          <ScalarProperty Name="Ihracat" ColumnName="Ihracat" />
+          <ScalarProperty Name="Hacim" ColumnName="Hacim" />
+          <ScalarProperty Name="Denge" ColumnName="Denge" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

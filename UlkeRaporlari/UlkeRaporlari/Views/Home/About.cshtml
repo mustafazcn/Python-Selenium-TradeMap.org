@@ -1,0 +1,164 @@
+﻿@using UlkeRaporlari.Controllers
+@using EntityFrameworkLibrary
+@model PageItem
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "About";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary card-header-icon">
+        <div class="card-icon">
+            <i class="material-icons">public</i>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        <div class="col-lg-5 col-md-3 col-sm-3 ">
+            <div class="dropdown bootstrap-select show-tick">
+                <div class="dropdown bootstrap-select">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="col-lg-5 col-md-3 col-sm-3 ">
+                <div class="dropdown bootstrap-select show-tick">
+                    <div class="dropdown bootstrap-select">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-datatables">
+                <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="col-sm-12">
+
+                        <center><h2>Bireysel Ülke Raporu </h2></center>
+
+                        <br />
+
+                        <table id="TradeMap1" class="display nowrap table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th><center>Ülke</center></th>
+                                    <th><center>Yıl</center></th>
+                                    <th><center>Toplam İthalat ($)</center></th>
+                                    <th><center>Toplam İhracat ($)</center></th>
+                                    <th><center>Hacim ($)</center></th>
+                                    <th><center>Denge ($)</center></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.lstTablo1)
+                                {
+                                    <tr>
+                                        <td>@item.ulkeAd</td>
+                                        <td>@item.Yil</td>
+                                        <td>@item.Ithalat</td>
+                                        <td>@item.Ihracat</td>
+                                        <td>@item.Hacim</td>
+                                        <td>@item.Denge</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-header card-header-primary card-header-icon">
+        <div class="card-icon">
+            <i class="material-icons">public</i>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        <div class="col-lg-5 col-md-3 col-sm-3 ">
+            <div class="dropdown bootstrap-select show-tick">
+                <div class="dropdown bootstrap-select">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="col-lg-5 col-md-3 col-sm-3 ">
+                <div class="dropdown bootstrap-select show-tick">
+                    <div class="dropdown bootstrap-select">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-datatables">
+                <div id="datatables_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="col-sm-12 ">
+
+                        <center><h2>Genel Ülke Raporu </h2></center>
+
+                        <br />
+
+                        <table id="TradeMap2" class="display nowrap table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th><center>Ülke</center></th>
+                                    <th><center>Yıl</center></th>
+                                    <th><center>İthalat Ülke</center></th>
+                                    <th><center>Toplam İthalat ($)</center></th>
+                                    <th><center>İhracat Ülke</center></th>
+                                    <th><center>Toplam İhracat ($)</center></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.lstTablo2)
+                                {
+                                    <tr>
+                                        <td>@item.ulkeAd</td>
+                                        <td>@item.Yil</td>
+                                        <td>@item.IthalatUlkeAdi</td>
+                                        <td>@item.Ithalat</td>
+                                        <td>@item.IhracatUlkeAdi</td>
+                                        <td>@item.Ihracat</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

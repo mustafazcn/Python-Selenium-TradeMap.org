@@ -1,0 +1,49 @@
+﻿.nested, .treeview {
+    list-style-type: none;
+}
+
+.treeview {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+}
+
+    .treeview > li {
+        border: 1px solid #dedede;
+        padding: 7px 15px;
+    }
+
+.caret_trw {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+    .caret_trw::before {
+        content: "\25B6";
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+.caret_trw-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    /*transform: rotate(90deg);*/
+}
+
+.nested {
+    margin-top: 5px !important;
+    display: none;
+}
+
+    .nested > li {
+        border: 1px solid #dedede;
+        padding: 7px 15px;
+    }
+
+.active {
+    display: block;
+}

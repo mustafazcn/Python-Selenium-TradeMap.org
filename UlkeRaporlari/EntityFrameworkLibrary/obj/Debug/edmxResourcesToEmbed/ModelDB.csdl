@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TradeMapDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Genel_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeID" Type="Int32" />
+    <Property Name="Yil" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Ithalat_ulkeID" Type="Int32" />
+    <Property Name="Ithalat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ihracat_ulkeID" Type="Int32" />
+    <Property Name="Ihracat" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="UlkeListesi" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi" FromRole="Genel_Ulke_Raporu" ToRole="UlkeListesi" />
+    <NavigationProperty Name="UlkeListesi1" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi1" FromRole="Genel_Ulke_Raporu" ToRole="UlkeListesi" />
+    <NavigationProperty Name="UlkeListesi2" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi2" FromRole="Genel_Ulke_Raporu" ToRole="UlkeListesi" />
+  </EntityType>
+  <EntityType Name="Ozel_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeID" Type="Int32" />
+    <Property Name="Yil" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Ithalat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ihracat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Hacim" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Denge" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="UlkeListesi" Relationship="Self.FK_Ozel_Ulke_Raporu_UlkeListesi" FromRole="Ozel_Ulke_Raporu" ToRole="UlkeListesi" />
+  </EntityType>
+  <EntityType Name="UlkeListesi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeAd" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Genel_Ulke_Raporu" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi" FromRole="UlkeListesi" ToRole="Genel_Ulke_Raporu" />
+    <NavigationProperty Name="Genel_Ulke_Raporu1" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi1" FromRole="UlkeListesi" ToRole="Genel_Ulke_Raporu" />
+    <NavigationProperty Name="Genel_Ulke_Raporu2" Relationship="Self.FK_Genel_Ulke_Raporu_UlkeListesi2" FromRole="UlkeListesi" ToRole="Genel_Ulke_Raporu" />
+    <NavigationProperty Name="Ozel_Ulke_Raporu" Relationship="Self.FK_Ozel_Ulke_Raporu_UlkeListesi" FromRole="UlkeListesi" ToRole="Ozel_Ulke_Raporu" />
+  </EntityType>
+  <EntityType Name="View_Base_GenelUlkeRapor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeID" Type="Int32" />
+    <Property Name="Yil" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Ithalat_ulkeID" Type="Int32" />
+    <Property Name="Ithalat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ihracat_ulkeID" Type="Int32" />
+    <Property Name="Ihracat" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="View_Base_OzelUlkeRapor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeID" Type="Int32" />
+    <Property Name="Yil" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Ithalat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Ihracat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Hacim" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Denge" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="View_Base_Ulkeler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeAd" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Presentation_GenelUlke">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ulkeAd" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Yil" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="IthalatUlkeAdi" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Ithalat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IhracatUlkeAdi" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Ihracat" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Genel_Ulke_Raporu_UlkeListesi">
+    <End Role="UlkeListesi" Type="Self.UlkeListesi" Multiplicity="0..1" />
+    <End Role="Genel_Ulke_Raporu" Type="Self.Genel_Ulke_Raporu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlkeListesi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Genel_Ulke_Raporu">
+        <PropertyRef Name="ulkeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Genel_Ulke_Raporu_UlkeListesi1">
+    <End Role="UlkeListesi" Type="Self.UlkeListesi" Multiplicity="0..1" />
+    <End Role="Genel_Ulke_Raporu" Type="Self.Genel_Ulke_Raporu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlkeListesi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Genel_Ulke_Raporu">
+        <PropertyRef Name="Ithalat_ulkeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Genel_Ulke_Raporu_UlkeListesi2">
+    <End Role="UlkeListesi" Type="Self.UlkeListesi" Multiplicity="0..1" />
+    <End Role="Genel_Ulke_Raporu" Type="Self.Genel_Ulke_Raporu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlkeListesi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Genel_Ulke_Raporu">
+        <PropertyRef Name="Ihracat_ulkeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ozel_Ulke_Raporu_UlkeListesi">
+    <End Role="UlkeListesi" Type="Self.UlkeListesi" Multiplicity="0..1" />
+    <End Role="Ozel_Ulke_Raporu" Type="Self.Ozel_Ulke_Raporu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlkeListesi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ozel_Ulke_Raporu">
+        <PropertyRef Name="ulkeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TradeMapDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Genel_Ulke_Raporu" EntityType="Self.Genel_Ulke_Raporu" />
+    <EntitySet Name="Ozel_Ulke_Raporu" EntityType="Self.Ozel_Ulke_Raporu" />
+    <EntitySet Name="UlkeListesi" EntityType="Self.UlkeListesi" />
+    <EntitySet Name="View_Base_GenelUlkeRapor" EntityType="Self.View_Base_GenelUlkeRapor" />
+    <EntitySet Name="View_Base_OzelUlkeRapor" EntityType="Self.View_Base_OzelUlkeRapor" />
+    <EntitySet Name="View_Base_Ulkeler" EntityType="Self.View_Base_Ulkeler" />
+    <EntitySet Name="View_Presentation_GenelUlke" EntityType="Self.View_Presentation_GenelUlke" />
+    <AssociationSet Name="FK_Genel_Ulke_Raporu_UlkeListesi" Association="Self.FK_Genel_Ulke_Raporu_UlkeListesi">
+      <End Role="UlkeListesi" EntitySet="UlkeListesi" />
+      <End Role="Genel_Ulke_Raporu" EntitySet="Genel_Ulke_Raporu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Genel_Ulke_Raporu_UlkeListesi1" Association="Self.FK_Genel_Ulke_Raporu_UlkeListesi1">
+      <End Role="UlkeListesi" EntitySet="UlkeListesi" />
+      <End Role="Genel_Ulke_Raporu" EntitySet="Genel_Ulke_Raporu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Genel_Ulke_Raporu_UlkeListesi2" Association="Self.FK_Genel_Ulke_Raporu_UlkeListesi2">
+      <End Role="UlkeListesi" EntitySet="UlkeListesi" />
+      <End Role="Genel_Ulke_Raporu" EntitySet="Genel_Ulke_Raporu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ozel_Ulke_Raporu_UlkeListesi" Association="Self.FK_Ozel_Ulke_Raporu_UlkeListesi">
+      <End Role="UlkeListesi" EntitySet="UlkeListesi" />
+      <End Role="Ozel_Ulke_Raporu" EntitySet="Ozel_Ulke_Raporu" />
+    </AssociationSet>
+    <FunctionImport Name="Proc_GenelUlkeRapor_Islem" ReturnType="Collection(TradeMapDBModel.Proc_GenelUlkeRapor_Islem_Result)">
+      <Parameter Name="Islem" Mode="In" Type="String" />
+      <Parameter Name="ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="Yil" Mode="In" Type="String" />
+      <Parameter Name="Ithalat_ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="Ithalat" Mode="In" Type="Int32" />
+      <Parameter Name="Ihracat_ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="Ihracat" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_OzelUlkeRapor_Islem" ReturnType="Collection(TradeMapDBModel.Proc_OzelUlkeRapor_Islem_Result)">
+      <Parameter Name="Islem" Mode="In" Type="String" />
+      <Parameter Name="ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="Yil" Mode="In" Type="String" />
+      <Parameter Name="Ithalat" Mode="In" Type="Int32" />
+      <Parameter Name="Ihracat" Mode="In" Type="Int32" />
+      <Parameter Name="Hacim" Mode="In" Type="Int32" />
+      <Parameter Name="Denge" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Proc_GenelUlkeRapor_Islem_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Yil" Nullable="true" MaxLength="7" />
+    <Property Type="String" Name="IthalatUlkeAdi" Nullable="true" MaxLength="60" />
+    <Property Type="Decimal" Name="Ithalat" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="IhracatUlkeAdi" Nullable="true" MaxLength="60" />
+    <Property Type="Decimal" Name="Ihracat" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="Proc_OzelUlkeRapor_Islem_Result">
+    <Property Type="Int32" Name="ulkeID" Nullable="true" />
+    <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Yil" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="Ithalat" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Ihracat" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Hacim" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Denge" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+</Schema>

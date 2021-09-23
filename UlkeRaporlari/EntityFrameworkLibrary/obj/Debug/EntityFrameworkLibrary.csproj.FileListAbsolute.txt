@@ -1,0 +1,11 @@
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFrameworkLibrary.dll.config
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFrameworkLibrary.dll
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFrameworkLibrary.pdb
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFramework.dll
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFramework.xml
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\obj\Debug\EntityFrameworkLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\obj\Debug\EntityFrameworkLibrary.csproj.CopyComplete
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\obj\Debug\EntityFrameworkLibrary.dll
+C:\Users\ASUS\source\repos\UlkeRaporlari\EntityFrameworkLibrary\obj\Debug\EntityFrameworkLibrary.pdb

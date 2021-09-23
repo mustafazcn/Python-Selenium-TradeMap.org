@@ -1,0 +1,16 @@
+﻿.ui-autocomplete {
+    z-index: 3;
+    display: block;
+    width: 350px !important;
+    position: relative;
+    top: -675px;
+    left: 704px;
+    background-color: #f3f6f9 !important;
+    padding: 8px 10px !important;
+    border: 1px solid #e74c3c !important;
+    list-style: none !important;
+}
+
+.ui-menu-item > a {
+    cursor: pointer !important;
+}
